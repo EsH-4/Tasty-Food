@@ -1,0 +1,42 @@
+@extends('layouts.app')
+
+@section('content')
+<section class="hero-section">
+  <div class="hero-custom-wrapper"> {{-- Ganti dari .container --}}
+    <div class="d-flex align-items-center">
+      <div class="hero-content">
+        <div class="hero-title-line"></div>
+        <h1 class="hero-title">
+          HEALTHY <br><strong>TASTY FOOD</strong>
+        </h1>
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel luctus ex. Fusce sit amet viverra ante.
+        </p>
+        <a href="#" class="btn custom-btn">TENTANG KAMI</a>
+      </div>
+    </div>
+-    <img src="{{ asset('images/img-4-2000x2000.png') }}" alt="Healthy Tasty Food"
+-         class="img-fluid hero-img-right">
++    <img src="{{ asset('images/img-4-2000x2000.png') }}" alt="Healthy Tasty Food"
++         class="img-fluid hero-img-right">
+  </div>
+</section>
+
+-section class="about-section-image py-5">
+-  <div class="container text-center">
+-    <h2 class="text-uppercase fw-bold">TENTANG KAMI</h2>
+-    <p class="intro-paragraph mx-auto mt-3 mb-4" style="max-width: 700px;">
+-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel luctus ex. Fusce sit amet viverra ante.
+-    </p>
+-    <hr style="width: 60px; height: 3px; background-color: #000; margin: 0 auto;">
+-  </div>
+-</section>
++<section class="about-section py-5">
++  <div class="container text-center">
++    <h2 class="text-uppercase fw-bold">TENTANG KAMI</h2>
++    <p class="intro-paragraph mx-auto mt-3 mb-4" style="max-width: 700px;">
++      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel luctus ex. Fusce sit amet viverra ante.
++    </p>
++    <hr style="width: 60px; height: 3px; background-color: #000; margin: 0 auto;">
++  </div>
++</section>
