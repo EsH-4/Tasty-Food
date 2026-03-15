@@ -1,173 +1,180 @@
 # 🍽️ TastyFood
 
-Website perusahaan kuliner berbasis Laravel dengan panel admin untuk mengelola berita, galeri, dan pesan kontak.
-
-![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
-![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+A Laravel-based culinary company website featuring an admin panel to manage news, galleries, and contact messages.
 
 ---
 
-## 📖 Tentang Proyek
+## 📖 About the Project
 
-**TastyFood** adalah aplikasi web company profile untuk bisnis kuliner. Situs menampilkan berita, galeri foto, halaman tentang kami, dan formulir kontak. Admin dapat mengelola seluruh konten melalui panel yang aman dengan fitur soft delete dan trash management.
+**TastyFood** is a company profile web application designed for culinary businesses. The site displays news, photo galleries, an "About Us" page, and a contact form. Admins can manage all content through a secure panel featuring soft delete and trash management capabilities.
 
-### Fitur Utama
+### Key Features
 
-**Frontend (Publik)**
-- 🏠 **Beranda** — Landing page dengan informasi utama
-- 📰 **Berita** — Daftar artikel & detail berita
-- 🖼️ **Galeri** — Galeri foto
-- 📞 **Kontak** — Formulir kirim pesan & info kontak
-- ℹ️ **Tentang** — Halaman tentang perusahaan
+**Frontend (Public)**
 
-**Panel Admin**
-- 🔐 Login admin
-- 📊 Dashboard
-- 📝 CRUD Berita (create, read, update, delete)
-- 🖼️ CRUD Galeri
-- ⚙️ Pengaturan informasi kontak (alamat, email, telepon)
-- 📬 Manajemen pesan dari formulir kontak
-- 🗑️ Trash — Restore atau hapus permanen item yang di-soft delete
+* 🏠 **Home** — Landing page with essential information.
+* 📰 **News** — Article listings and news details.
+* 🖼️ **Gallery** — Photo gallery section.
+* 📞 **Contact** — Message submission form and contact info.
+* ℹ️ **About** — Company information page.
+
+**Admin Panel**
+
+* 🔐 Admin login.
+* 📊 Dashboard.
+* 📝 News CRUD (Create, Read, Update, Delete).
+* 🖼️ Gallery CRUD.
+* ⚙️ Contact information settings (address, email, phone).
+* 📬 Inbox management for contact form messages.
+* 🗑️ Trash — Restore or permanently delete soft-deleted items.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Kategori    | Teknologi        |
-|------------|------------------|
-| Backend    | Laravel 12, PHP 8.2+ |
-| Frontend   | Blade, Tailwind CSS 4, Bootstrap 5, SASS |
-| Build      | Vite 6           |
-| Database   | MySQL / SQLite (sesuai konfigurasi) |
+| Category | Technology |
+| --- | --- |
+| Backend | Laravel 12, PHP 8.2+ |
+| Frontend | Blade, Tailwind CSS 4, Bootstrap 5, SASS |
+| Build Tool | Vite 6 |
+| Database | MySQL / SQLite (configurable) |
 
 ---
 
-## 📋 Persyaratan
+## 📋 Requirements
 
-- **PHP** ≥ 8.2
-- **Composer** 2.x
-- **Node.js** ≥ 18 (untuk Vite & npm)
-- **Database** MySQL 8+ atau SQLite
+* **PHP** ≥ 8.2
+* **Composer** 2.x
+* **Node.js** ≥ 18 (for Vite & npm)
+* **Database** MySQL 8+ or SQLite
 
 ---
 
-## 🚀 Instalasi
+## 🚀 Installation
 
-### 1. Clone repositori
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/USERNAME/tastyfood.git
 cd tastyfood
+
 ```
 
-### 2. Install dependensi PHP
+### 2. Install PHP dependencies
 
 ```bash
 composer install
+
 ```
 
-### 3. Environment
+### 3. Environment Setup
 
 ```bash
 cp .env.example .env
 php artisan key:generate
+
 ```
 
-Edit `.env` dan sesuaikan:
-- `DB_CONNECTION`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` (jika pakai MySQL)
-- Atau gunakan SQLite dengan `DB_CONNECTION=sqlite` dan pastikan file `database/database.sqlite` ada
+Edit the `.env` file to match your configuration:
 
-### 4. Database
+* `DB_CONNECTION`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` (if using MySQL).
+* Or use SQLite by setting `DB_CONNECTION=sqlite` and ensuring the `database/database.sqlite` file exists.
+
+### 4. Database Setup
 
 ```bash
 php artisan migrate
-# (Opsional) seed data awal:
+# (Optional) seed initial data:
 # php artisan db:seed
+
 ```
 
-### 5. Install dependensi Node & build assets
+### 5. Install Node dependencies & build assets
 
 ```bash
 npm install
 npm run build
+
 ```
 
-### 6. Jalankan aplikasi
+### 6. Run the application
 
 **Development (server + queue + logs + Vite):**
+
 ```bash
 composer run dev
+
 ```
 
-Atau jalankan terpisah:
+Or run them separately:
 
 ```bash
 # Terminal 1 — Laravel
 php artisan serve
 
-# Terminal 2 — Vite (untuk hot reload assets)
+# Terminal 2 — Vite (for asset hot reloading)
 npm run dev
+
 ```
 
-Akses:
-- **Website:** http://localhost:8000  
-- **Admin:** http://localhost:8000/admin/login  
+Access via:
+
+* **Website:** http://localhost:8000
+* **Admin:** http://localhost:8000/admin/login
 
 ---
 
-## 📁 Struktur Proyek (Ringkas)
+## 📁 Project Structure (Summary)
 
 ```
 tastyfood-new/
 ├── app/Http/Controllers/
-│   ├── Admin/           # Controller panel admin
+│   ├── Admin/            # Admin panel controllers
 │   ├── HomeController.php
 │   ├── BeritaController.php
 │   ├── GaleriController.php
 │   ├── FrontendBeritaController.php
 │   └── FrontendGaleriController.php
 ├── resources/views/
-│   ├── layouts/         # Layout utama & partial (navbar, footer)
-│   ├── admin/           # View panel admin
+│   ├── layouts/          # Main layouts & partials (navbar, footer)
+│   ├── admin/            # Admin panel views
 │   ├── home.blade.php
 │   ├── tentang.blade.php
 │   ├── kontak.blade.php
 │   ├── berita.blade.php
 │   ├── berita-detail.blade.php
 │   └── galeri.blade.php
-├── routes/web.php       # Rute web & admin
-├── package.json         # Vite, Tailwind, Bootstrap, SASS
-└── composer.json        # Laravel & PHP dependencies
+├── routes/web.php        # Web & admin routes
+├── package.json          # Vite, Tailwind, Bootstrap, SASS configs
+└── composer.json         # Laravel & PHP dependencies
+
 ```
 
 ---
 
-## 🔗 Rute Penting
+## 🔗 Important Routes
 
-| URL                    | Keterangan        |
-|------------------------|-------------------|
-| `/`                    | Beranda           |
-| `/berita`              | Daftar berita     |
-| `/berita/{slug}`       | Detail berita     |
-| `/galeri`              | Galeri            |
-| `/kontak`              | Kontak            |
-| `/tentang`             | Tentang kami      |
-| `/admin/login`         | Login admin       |
-| `/admin/dashboard`     | Dashboard admin   |
-
----
-
-## 📄 Lisensi
-
-Proyek ini menggunakan lisensi [MIT](https://opensource.org/licenses/MIT).
+| URL | Description |
+| --- | --- |
+| `/` | Home |
+| `/berita` | News list |
+| `/berita/{slug}` | News details |
+| `/galeri` | Gallery |
+| `/kontak` | Contact |
+| `/tentang` | About Us |
+| `/admin/login` | Admin login |
+| `/admin/dashboard` | Admin dashboard |
 
 ---
 
-## 👤 Kontak
+## 📄 License
 
-- **Email:** mzam.ibrahimovic@gmail.com
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
-Jika Anda menggunakan proyek ini, silakan beri credit atau link ke repositori ini.
+---
+
+## 👤 Contact
+
+* **Email:** mzam.ibrahimovic@gmail.com
+
+If you find this project useful, please consider giving credit or linking back to this repository.
