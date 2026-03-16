@@ -30,6 +30,19 @@ A Laravel-based culinary company website featuring an admin panel to manage news
 
 ---
 
+## 📸 Web Preview
+
+🏠 Home Page <br>
+<img src="assets/Home_Page.png" width="400">
+
+📊 Admin Dashboard <br>
+<img src="assets/Admin_Panel.png" width="400">
+
+📝 News CRUD <br>
+<img src="assets/News_Content.png" width="400">
+
+---
+
 ## 🛠️ Tech Stack
 
 | Category | Technology |
